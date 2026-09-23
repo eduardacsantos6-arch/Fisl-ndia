@@ -1,0 +1,507 @@
+/* =========================================
+   PÁGINA DE RESULTADOS
+========================================= */
+
+body {
+    background: #f4fbfc;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+main {
+    width: 100%;
+}
+
+main > section:first-child {
+    position: relative;
+
+    padding: 65px 7% 50px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 88% 15%,
+            rgba(6, 182, 164, 0.16),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #f8ffff,
+            #eaf9fc
+        );
+
+    border-bottom: 1px solid #d9edf1;
+}
+
+main > section:first-child::before {
+    content: "02 / RESULTADOS";
+
+    position: absolute;
+
+    top: 25px;
+    left: 7%;
+
+    color: #06b6a4;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+main > section:first-child h1 {
+    max-width: 850px;
+
+    margin-bottom: 12px;
+
+    color: #073b4c;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: clamp(2.3rem, 4vw, 3.5rem);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.04em;
+}
+
+main > section:first-child h1 em {
+    color: #06b6a4;
+
+    font-style: italic;
+}
+
+main > section:first-child p {
+    max-width: 700px;
+
+    color: #66818b;
+
+    font-size: 0.94rem;
+
+    line-height: 1.7;
+}
+
+/* =========================================
+   ÁREA DOS RESULTADOS
+========================================= */
+
+.results,
+.resultados,
+.results-container,
+.resultados-container {
+    width: min(1100px, 88%);
+
+    margin: 0 auto;
+
+    padding: 55px 0 100px;
+}
+
+/* =========================================
+   IDENTIFICAÇÃO DA AMOSTRA
+========================================= */
+
+.sample-header,
+.sample-info,
+.amostra-header,
+.amostra-info {
+    margin-bottom: 25px;
+
+    padding: 25px 28px;
+
+    border: 1px solid #d9edf1;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px rgba(7, 59, 76, 0.05);
+}
+
+.sample-header h2,
+.sample-info h2,
+.amostra-header h2,
+.amostra-info h2 {
+    margin-bottom: 5px;
+
+    color: #073b4c;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 1.3rem;
+}
+
+.sample-header p,
+.sample-info p,
+.amostra-header p,
+.amostra-info p {
+    color: #66818b;
+
+    font-size: 0.83rem;
+}
+
+/* =========================================
+   CARDS DE PARÂMETROS
+========================================= */
+
+.results-grid,
+.resultados-grid,
+.parameters,
+.parametros {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+/* qualquer card de resultado */
+
+.results-grid > *,
+.resultados-grid > *,
+.parameters > *,
+.parametros > * {
+    position: relative;
+
+    padding: 24px;
+
+    border: 1px solid #d9edf1;
+
+    border-radius: 17px;
+
+    background: white;
+
+    box-shadow:
+        0 7px 23px rgba(7, 59, 76, 0.045);
+
+    overflow: hidden;
+
+    transition: 0.2s ease;
+}
+
+.results-grid > *:hover,
+.resultados-grid > *:hover,
+.parameters > *:hover,
+.parametros > *:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 30px rgba(7, 59, 76, 0.08);
+}
+
+/* linha superior */
+
+.results-grid > *::before,
+.resultados-grid > *::before,
+.parameters > *::before,
+.parametros > *::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #118ab2;
+}
+
+/* =========================================
+   NOMES DOS PARÂMETROS
+========================================= */
+
+.results-grid h3,
+.resultados-grid h3,
+.parameters h3,
+.parametros h3 {
+    margin-bottom: 15px;
+
+    color: #073b4c;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 1rem;
+}
+
+.results-grid strong,
+.resultados-grid strong,
+.parameters strong,
+.parametros strong {
+    color: #118ab2;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 1.8rem;
+}
+
+/* =========================================
+   CLASSIFICAÇÃO
+========================================= */
+
+.status,
+.classificacao,
+.resultado-status {
+    display: inline-flex;
+    align-items: center;
+
+    margin-top: 13px;
+
+    padding: 6px 11px;
+
+    border-radius: 999px;
+
+    background: #e4f8f5;
+
+    color: #087f72;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.status::before,
+.classificacao::before,
+.resultado-status::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: #06b6a4;
+}
+
+/* =========================================
+   BIOFILTRO
+========================================= */
+
+.biofilter-result,
+.biofiltro-result,
+.biofilter,
+.biofiltro {
+    position: relative;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #073b4c,
+            #075c73
+        );
+
+    color: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 18px 40px rgba(7, 59, 76, 0.14);
+}
+
+.biofilter-result::after,
+.biofiltro-result::after,
+.biofilter::after,
+.biofiltro::after {
+    content: "H₂O";
+
+    position: absolute;
+
+    right: -10px;
+    bottom: -45px;
+
+    color: rgba(255, 255, 255, 0.05);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 8rem;
+    font-weight: 800;
+}
+
+.biofilter-result h2,
+.biofiltro-result h2,
+.biofilter h2,
+.biofiltro h2 {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 8px;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 1.4rem;
+}
+
+.biofilter-result p,
+.biofiltro-result p,
+.biofilter p,
+.biofiltro p {
+    position: relative;
+    z-index: 2;
+
+    color: #c8e1e7;
+
+    font-size: 0.85rem;
+}
+
+.efficiency,
+.eficiencia {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 20px;
+
+    color: #ffd166;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 2.6rem;
+    font-weight: 800;
+}
+
+/* =========================================
+   RESULTADO FINAL
+========================================= */
+
+.final-result,
+.resultado-final,
+.final {
+    margin-top: 25px;
+
+    padding: 35px;
+
+    border: 2px solid #b8e8df;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #effcf9,
+            #ffffff
+        );
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(6, 182, 164, 0.08);
+}
+
+.final-result h2,
+.resultado-final h2,
+.final h2 {
+    margin-bottom: 8px;
+
+    color: #073b4c;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 1.5rem;
+}
+
+.final-result strong,
+.resultado-final strong,
+.final strong {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #06b6a4;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 2rem;
+}
+
+.final-result p,
+.resultado-final p,
+.final p {
+    color: #66818b;
+
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.results a,
+.resultados a,
+.results-container a,
+.resultados-container a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 45px;
+
+    margin-top: 25px;
+
+    padding: 11px 20px;
+
+    border-radius: 10px;
+
+    background: #073b4c;
+
+    color: white;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.results a:hover,
+.resultados a:hover,
+.results-container a:hover,
+.resultados-container a:hover {
+    background: #118ab2;
+
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 750px) {
+
+    main > section:first-child {
+        padding: 60px 6% 40px;
+    }
+
+    main > section:first-child::before {
+        left: 6%;
+    }
+
+    .results,
+    .resultados,
+    .results-container,
+    .resultados-container {
+        width: 90%;
+    }
+
+    .results-grid,
+    .resultados-grid,
+    .parameters,
+    .parametros {
+        grid-template-columns: 1fr;
+    }
+
+    .biofilter-result,
+    .biofiltro-result,
+    .biofilter,
+    .biofiltro {
+        padding: 25px;
+    }
+}

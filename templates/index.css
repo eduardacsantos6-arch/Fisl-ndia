@@ -1,0 +1,897 @@
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 555px;
+
+    padding: 90px 8% 100px;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+
+    gap: 50px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 18%,
+            rgba(6, 182, 164, 0.20),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 8% 90%,
+            rgba(17, 138, 178, 0.14),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #f8ffff 0%,
+            #e9fafd 100%
+        );
+}
+
+/* círculos decorativos */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -120px;
+    bottom: -160px;
+
+    border-radius: 50%;
+
+    background: rgba(82, 183, 136, 0.10);
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    top: 80px;
+    right: 16%;
+
+    border: 18px solid rgba(6, 182, 164, 0.06);
+
+    border-radius: 50%;
+}
+
+/* =========================================
+   CONTEÚDO DO HERO
+========================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 680px;
+
+    margin-left: auto;
+}
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.hero h1 {
+    margin-bottom: 22px;
+
+    color: var(--azul-profundo);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: clamp(3rem, 5vw, 5rem);
+
+    font-weight: 800;
+
+    line-height: 1.02;
+
+    letter-spacing: -0.055em;
+}
+
+.hero h1 em {
+    display: block;
+
+    color: var(--turquesa);
+
+    font-style: italic;
+}
+
+/* =========================================
+   TEXTO
+========================================= */
+
+.hero p {
+    max-width: 590px;
+
+    margin-bottom: 30px;
+
+    color: var(--texto-suave);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+.button-primary {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 14px 21px;
+
+    border-radius: 11px;
+
+    background: var(--azul-profundo);
+
+    color: white;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(7, 59, 76, 0.16);
+
+    transition: 0.25s ease;
+}
+
+.button-primary:hover {
+    background: var(--azul);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(17, 138, 178, 0.20);
+}
+
+.button-link {
+    color: var(--azul-profundo);
+
+    font-size: 0.86rem;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.button-link:hover {
+    color: var(--turquesa);
+
+    transform: translateX(3px);
+}
+
+/* =========================================
+   VISUAL DA ÁGUA
+========================================= */
+
+.water-visual {
+    position: relative;
+    z-index: 2;
+
+    min-height: 390px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+   CÍRCULO PRINCIPAL
+========================================= */
+
+.water-circle {
+    width: 270px;
+    height: 270px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(255, 255, 255, 0.85),
+            transparent 20%
+        ),
+        linear-gradient(
+            145deg,
+            var(--azul),
+            var(--turquesa)
+        );
+
+    border: 12px solid rgba(255, 255, 255, 0.65);
+
+    box-shadow:
+        0 25px 60px rgba(17, 138, 178, 0.25);
+
+    color: white;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 2.3rem;
+    font-weight: 800;
+
+    animation: waterFloat 5s ease-in-out infinite;
+}
+
+.water-circle::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border: 1px solid rgba(17, 138, 178, 0.15);
+
+    border-radius: 50%;
+}
+
+@keyframes waterFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* =========================================
+   CARDS FLUTUANTES
+========================================= */
+
+.floating-card {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 125px;
+
+    padding: 15px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.86);
+
+    box-shadow: var(--sombra);
+
+    backdrop-filter: blur(10px);
+}
+
+.floating-card strong {
+    color: var(--azul-profundo);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 0.86rem;
+}
+
+.floating-card small {
+    color: var(--texto-suave);
+
+    font-size: 0.72rem;
+}
+
+.card-one {
+    top: 70px;
+    left: 5%;
+
+    transform: rotate(-3deg);
+}
+
+.card-two {
+    right: 4%;
+    bottom: 55px;
+
+    transform: rotate(3deg);
+}
+
+.card-one::before,
+.card-two::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+
+    margin-bottom: 7px;
+
+    border-radius: 50%;
+
+    background: var(--turquesa);
+}
+
+/* =========================================
+   ESTATÍSTICAS
+========================================= */
+
+.stats {
+    position: relative;
+    z-index: 10;
+
+    width: min(1120px, 88%);
+
+    margin: -35px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    overflow: hidden;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow: var(--sombra);
+}
+
+.stats > div {
+    min-height: 105px;
+
+    padding: 22px 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+
+    border-right: 1px solid var(--borda);
+}
+
+.stats > div:last-child {
+    border-right: none;
+}
+
+.stats strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--azul);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+.stats span {
+    color: var(--texto-suave);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* =========================================
+   SEÇÃO COMO FUNCIONA
+========================================= */
+
+.project-section {
+    padding: 115px 8% 100px;
+
+    background: var(--fundo);
+}
+
+.section-title {
+    width: min(700px, 100%);
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-title h2 {
+    margin-bottom: 15px;
+
+    color: var(--azul-profundo);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.035em;
+}
+
+.section-title h2 em {
+    color: var(--turquesa);
+
+    font-style: italic;
+}
+
+.section-title p {
+    color: var(--texto-suave);
+
+    font-size: 0.94rem;
+
+    line-height: 1.8;
+}
+
+/* =========================================
+   ETAPAS
+========================================= */
+
+.steps {
+    width: min(1120px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.steps article {
+    position: relative;
+
+    min-height: 250px;
+
+    padding: 27px;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 5px 20px rgba(7, 59, 76, 0.035);
+
+    transition: 0.25s ease;
+}
+
+.steps article:hover {
+    transform: translateY(-7px);
+
+    border-color: #b8e5eb;
+
+    box-shadow: var(--sombra);
+}
+
+.steps article > span {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: #a1bbc3;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 0.73rem;
+    font-weight: 800;
+}
+
+.step-icon {
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: var(--azul-claro);
+
+    color: var(--azul);
+
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.steps article:nth-child(2) .step-icon {
+    background: var(--turquesa-claro);
+
+    color: var(--turquesa);
+}
+
+.steps article:nth-child(3) .step-icon {
+    background: var(--amarelo-claro);
+
+    color: #c58b00;
+}
+
+.steps article:nth-child(4) .step-icon {
+    background: var(--verde-claro);
+
+    color: var(--verde);
+}
+
+.steps h3 {
+    margin-bottom: 8px;
+
+    color: var(--azul-profundo);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 1.05rem;
+}
+
+.steps article p {
+    color: var(--texto-suave);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+/* =========================================
+   SEÇÃO CONCEITO
+========================================= */
+
+.concept-section {
+    width: min(1120px, 88%);
+
+    margin: 0 auto;
+
+    padding: 80px 0;
+
+    display: grid;
+    grid-template-columns: 100px 1fr;
+
+    align-items: start;
+
+    gap: 45px;
+
+    border-top: 1px solid var(--borda);
+}
+
+.concept-number {
+    color: var(--turquesa);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 4rem;
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+.concept-section h2 {
+    max-width: 700px;
+
+    margin-bottom: 15px;
+
+    color: var(--azul-profundo);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.04em;
+}
+
+.concept-section h2 em {
+    color: var(--turquesa);
+
+    font-style: italic;
+}
+
+.concept-section p {
+    max-width: 700px;
+
+    color: var(--texto-suave);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+/* =========================================
+   ODS
+========================================= */
+
+.ods-section {
+    position: relative;
+
+    width: min(1120px, 88%);
+
+    margin: 20px auto 100px;
+
+    padding: 55px 60px;
+
+    display: grid;
+    grid-template-columns: 120px 1fr;
+
+    align-items: center;
+
+    gap: 45px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(6, 182, 164, 0.30),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #073b4c,
+            #075b73
+        );
+
+    box-shadow:
+        0 20px 45px rgba(7, 59, 76, 0.16);
+
+    color: white;
+}
+
+.ods-section::after {
+    content: "H₂O";
+
+    position: absolute;
+
+    right: 20px;
+    bottom: -65px;
+
+    color: rgba(255, 255, 255, 0.055);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 10rem;
+    font-weight: 800;
+}
+
+.ods-badge {
+    position: relative;
+    z-index: 2;
+
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background: var(--amarelo);
+
+    color: var(--azul-profundo);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+.ods-badge strong {
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 3rem;
+
+    line-height: 1;
+}
+
+.ods-section > div:last-child {
+    position: relative;
+    z-index: 2;
+}
+
+.ods-section .eyebrow {
+    color: var(--amarelo);
+}
+
+.ods-section h2 {
+    margin-bottom: 12px;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 2rem;
+
+    line-height: 1.15;
+}
+
+.ods-section p {
+    max-width: 700px;
+
+    color: #c7e0e7;
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-top: 75px;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .water-visual {
+        min-height: 330px;
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+
+        margin-top: -25px;
+    }
+
+    .stats > div {
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .stats > div:nth-child(2) {
+        border-right: none;
+    }
+
+    .stats > div:nth-child(3),
+    .stats > div:nth-child(4) {
+        border-bottom: none;
+    }
+
+    .project-section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .concept-section {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .concept-number {
+        font-size: 2.5rem;
+    }
+
+    .ods-section {
+        grid-template-columns: 1fr;
+
+        padding: 40px 30px;
+
+        gap: 25px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.55rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .button-primary,
+    .button-link {
+        width: 100%;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .water-circle {
+        width: 210px;
+        height: 210px;
+
+        font-size: 1.8rem;
+    }
+
+    .water-circle::before {
+        width: 250px;
+        height: 250px;
+    }
+
+    .floating-card {
+        min-width: 105px;
+
+        padding: 11px 13px;
+    }
+
+    .card-one {
+        left: 0;
+    }
+
+    .card-two {
+        right: 0;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2,
+    .concept-section h2 {
+        font-size: 2rem;
+    }
+
+    .ods-section {
+        width: 90%;
+    }
+}
