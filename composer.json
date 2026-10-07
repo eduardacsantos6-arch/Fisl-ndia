@@ -6,10 +6,7 @@
         "psr-4": {
             "Controller\\": "Controller/",
             "Model\\": "Model/"
-        },
-        "files": [
-            "Config/configuration.php"
-        ]
+        }
     },
     "minimum-stability": "dev",
     "require": {
